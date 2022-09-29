@@ -1,6 +1,6 @@
 window.onload = ()=>{
     signupRequest();
-    loginRequest();
+    rememberMe();
     shwoUser();
 }
 
@@ -47,7 +47,7 @@ const signupRequest = ()=>{
     }
 }
 
-const loginRequest = ()=>{
+const rememberMe = ()=>{
     const login_form = document.querySelector("#login-form");
     login_form.onsubmit = (event)=>{
         event.preventDefault();
@@ -60,15 +60,38 @@ const loginRequest = ()=>{
         });
         if(loginRememberCheckbox.checked){
             localStorage.setItem("user", user);
+            loginRequest(user);
         }
         else{
+            loginRequest(user);
 
         }
     }
 }
 
+
+const loginRequest = (user)=>{
+    const ajax = new XMLHttpRequest();
+    ajax.open("POST","http://localhost:8080/api/login", true);
+    ajax.send(user);
+
+    ajax.onreadystatechange = ()=>{
+        if(ajax.readyState == 2){
+            $(".loader").removeClass("d-none");
+        }
+    }
+
+    // get response 
+
+    ajax.onload = ()=>{
+        $(".loader").addClass("d-none");
+        console.log(ajax.response);
+    }
+
+
+}
+
 const shwoUser = ()=>{
-    console.log(localStorage.getItem("user"));
     if(localStorage.getItem("user") != null){
         const user = JSON.parse(localStorage.getItem("user"));
         const login_email = user.username;

@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const signup = require("./node-api/signup");
+const login = require("./node-api/login");
 
 
 
@@ -83,6 +84,10 @@ const server = http.createServer((request, response)=>{
     // node apis routing coding start
     else if(request.url == "/api/signup"){
         signup.result(request, response);
+    }
+
+    else if(request.url == "/api/login"){
+        login.result(request, response);
     }
 
     // node apis routing coding end

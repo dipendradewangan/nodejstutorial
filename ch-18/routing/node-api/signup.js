@@ -23,7 +23,7 @@ exports.result = (request, response)=>{
             //encrypt password and then try to proceed the signup
             // createUser(userInfo);
 
-            bcrypt.hash(userInfo.password, 10).then((encrypted_password)=>{
+            bcrypt.hash(userInfo.password.toString(), 10).then((encrypted_password)=>{
                 userInfo['password'] = encrypted_password;
                 userInfo['created_at'] = new Date();
                 userInfo['updated_at'] = new Date();
