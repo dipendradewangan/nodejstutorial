@@ -1,0 +1,14 @@
+javascript toast coding
+
+if (data.message.insertedId) {
+    $(".toast").toast('show');
+    $(".toast-body").html("Thank you ! Signup success....");
+    $(".toast").addClass("animate__animated animate__slideInRight");
+    $("#signup-form").trigger("reset");
+} else {
+    $(".toast").toast('show');
+    $(".toast-body").html("Opps ! internal server error....");
+    $(".toast").addClass("animate__animated animate__slideInRight");
+    $("#signup-form").trigger("reset");
+
+}

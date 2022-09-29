@@ -1,0 +1,16 @@
+body{
+    background-color: #F1F1F2
+  }
+  
+  #upload-form input{
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+  #upload-form input:focus{
+    box-shadow: none !important;
+  }
+  

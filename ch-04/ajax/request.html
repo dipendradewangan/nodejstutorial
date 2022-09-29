@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax request</title>
+</head>
+<body>
+    <form id="form">
+        username
+        <br>
+        <input type="text" name="username" id="username">
+        <br>
+        <br>
+        password
+        <br>
+        <input type="password" name="password" id="password">
+        <br>
+        <br>
+        <input type="submit" value="login">
+
+    </form>
+
+    <script>
+        const form = document.querySelector("#form");
+        form.onsubmit = ()=>{
+            const username = document.querySelector("#username").value;
+            const password = document.querySelector("#password").value;
+            
+            // ajax coding start
+
+            // ajax request coding start
+            let url = "http://localhost:8000?username="+username+"&password="+password;
+            const ajax = new XMLHttpRequest();
+            ajax.open("GET",url, true);
+            ajax.send();
+            // ajax request coding end
+            // ajax response coding start
+            
+            ajax.onreadystatechange = ()=>{
+                if(ajax.readyState == 4){
+                    console.log(ajax.responseText);
+                }
+            }
+            // ajax response coding end
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
