@@ -1,0 +1,3 @@
+01. make index.js and create server using pure node js mathod
+02. make route in index.js for frontend files
+03. route method should be used file system module for every frontend files
