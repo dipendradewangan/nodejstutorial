@@ -21,7 +21,7 @@ const server = http.createServer((request, response) => {
                 pass: process.env.EMAIL_PWD
             },
             port: 587,
-            sequre: false
+            secure: false
         });
 
 
