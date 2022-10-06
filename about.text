@@ -1,5 +1,10 @@
 upto ch - 17 completed
 upto ch - 20 completed
     prepairing for profile page
-    
     verified token 
+
+upto ch - 21 completed 
+    db.js i'd updated function according to dynamic database collection and fix signup and login js files 
+    in login.js file i have made a dynamic secret key and inserted into database using jwt_secret collection
+    use of secret key i have tried to retrieve object id of secret key in jwt secret 
+
