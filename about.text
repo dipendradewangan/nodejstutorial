@@ -17,3 +17,7 @@ upto ch - 22 completed
     coded for if token will be change, token and secret id remove from the localstorage and redirect into homepage i.e. logout the website
     coded for autologout means expired webpage after 24 hour
     commit - coded for profile page according to verify token or not and logout, autologin and autologout after 24 hours
+
+upto ch - 23 completed 
+    this is not about project 
+    this is about some basics of file system
