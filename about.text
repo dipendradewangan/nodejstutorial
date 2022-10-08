@@ -35,4 +35,10 @@ upto ch - 25 completed
     mailing system using retrieved payout email data 
     tested email system working or not
     if suceessfully woring email-template setup in email system
-    
+
+upto ch - 26 completed
+    made dynamic email verify link using token (token from localstorage) secretid (secret key database id) and verify (user database id)
+    email tamplate designed in js file for setup link in verify button
+    after this succussfully woring condition databse user database isVerified updated false to true dynamically
+    for getting the verify link i have setup verify template 
+    in this tamplate verify now btn redirected email server according to email address
