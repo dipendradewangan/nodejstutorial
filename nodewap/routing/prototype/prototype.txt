@@ -1,0 +1,33 @@
+upto ch - 21 completed 
+    db.js i'd updated function according to dynamic database collection and fix signup and login js files 
+    in login.js file i have made a dynamic secret key and inserted into database using jwt_secret collection
+    use of secret key i have tried to retrieve object id of secret key in jwt secret 
+
+upto ch - 22 completed
+    retrieved secret key help of object id in jwt_secret collection using findById function
+    decode the token data using secret key and send response data on console.log
+    according to response data if isVerified true remove loader and show profile page
+    after this i had coded for logout and remove token and secret key from the localstorage
+    define the autologin function direct open profile if website logined
+    coded for if token will be change, token and secret id remove from the localstorage and redirect into homepage i.e. logout the website
+    coded for autologout means expired webpage after 24 hour
+    commit - coded for profile page according to verify token or not and logout, autologin and autologout after 24 hours
+
+upto ch - 23 completed 
+    this is not about project 
+    this is about some basics of file system
+
+
+upto ch - 24 completed
+    remove photo link from the webpage and set photos using from directory
+    make route for the photo directory using the registry expression.
+    
+upto ch - 25 completed
+    retrieve payout from the token using localstorage
+    make api for the sendmail.js 
+    make function for the sendmail
+    install nodemailer and dotenv 
+    mailing system using retrieved payout email data 
+    tested email system working or not
+    if suceessfully woring email-template setup in email system
+    
