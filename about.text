@@ -1,4 +1,5 @@
 upto ch - 17 completed
+
 upto ch - 20 completed
     prepairing for profile page
     verified token 
@@ -42,3 +43,8 @@ upto ch - 26 completed
     after this succussfully woring condition databse user database isVerified updated false to true dynamically
     for getting the verify link i have setup verify template 
     in this tamplate verify now btn redirected email server according to email address
+
+upto ch - 27 completed
+    starting express js
+    create server using express
+    make route for the express
