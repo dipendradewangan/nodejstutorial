@@ -1,0 +1,7 @@
+make routing 
+learn about get , post, put, delete, all request
+learn about get = get data form the database
+learn about post = insert data into database
+learn about put = update data from the database
+learn about delete = delete data into the databse
+made separate function for all request for the database

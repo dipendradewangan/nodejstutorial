@@ -48,3 +48,14 @@ upto ch - 27 completed
     starting express js
     create server using express
     make route for the express
+
+upto ch - 28 completed
+    this is for express js
+    make routing 
+    learn about get , post, put, delete, all request
+    learn about get = get data form the database
+    learn about post = insert data into database
+    learn about put = update data from the database
+    learn about delete = delete data into the databse
+    install body-server
+    made separate function for all request for the database

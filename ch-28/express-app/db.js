@@ -1,0 +1,434 @@
+const mongo = require("mongodb");
+const url = "mongodb://127.0.0.1:27017";
+const ObjectId = require("mongodb").ObjectId;
+
+
+const config = ()=>{
+    return new Promise((resolve, reject)=>{
+        mongo.MongoClient.connect(url, (error, conn)=>{
+            const db = conn.db("project");
+            resolve(db);
+        })
+    })
+}
+
+
+
+exports.findAll = (collection_name)=>{
+    return new Promise((resolve, reject)=>{
+
+        config().then((db)=>{
+            db.collection(collection_name).find().toArray((error, dataRes)=>{
+                if(dataRes.length != 0){
+                    resolve({
+                        status_code : 200,
+                        data : dataRes,
+                        message : "data found!"
+                    })
+                }
+                else{
+                    reject({
+                        status_code : 404,
+                        message : "Data not found!"
+                    })
+                }
+            })
+        })
+    })
+}
+
+
+exports.insertById = (userInfo, collection_name)=>{
+    return new Promise((resolve, reject)=>{
+        config().then((db)=>{
+            db.collection(collection_name).insertOne(userInfo, (error, dataRes)=>{
+                if(error){
+                    reject({
+                        status_code : 500,
+                        message : "Internal server error!"
+                    })
+                }
+                else{
+                    resolve({
+                        status_code : 200,
+                        data : dataRes,
+                        message : "successfully insterted"
+                    })
+                }
+            })
+        });
+    })
+}
+
+
+
+exports.updateById = (id,formdata,collection_name)=>{
+    return new Promise((resolve, reject)=>{
+        config().then((db)=>{
+            
+            db.collection(collection_name).updateOne({
+                _id : ObjectId(id)
+            },formdata, (error, dataRes)=>{
+                if(error){
+                    reject({
+                        status_code : 500,
+                        message : "Internal server error"
+                    })
+                }
+                else{
+                    resolve({
+                        status_code : 200,
+                        data : dataRes,
+                        message : "update success"
+                    })
+                }
+            })
+        })
+    })
+}
+
+
+exports.deleteById = (id,collection_name)=>{
+    return new Promise((resolve, reject)=>{
+        config().then((db)=>{
+            db.collection(collection_name).deleteOne({
+                _id : ObjectId(id)
+            },(error)=>{
+                if(error){
+                    reject({
+                        status_code : 500,
+                        message : "Internal server error"
+                    })
+                    resolve({
+                        status_code : 200,
+                        message : "delete success"
+                    })
+                }
+            })
+        })
+    })
+}
+
+// // fetch and find the data using object id
+
+// exports.findById = (id, collection_name)=>{
+//     return new Promise((resolve, reject)=>{
+//         config().then((db)=>{
+//             db.collection(collection_name).find({
+//                 _id : ObjectId(id)
+//             }).toArray((error, dataResponse)=>{
+//                 if(dataResponse.length != 0){
+//                     resolve({
+//                         status_code : 200,
+//                         data : dataResponse,
+//                         message : "Match found !"
+//                     });
+//                 }
+//                 else{
+//                     reject({
+//                         status_code : 404,
+//                         message : "Data not found !"
+//                     })
+//                 }
+//             })
+//         })
+//     })
+// }
+
+
+
+exports.findById = (id,collection_name)=>{
+    return new Promise((resolve, reject)=>{
+        config().then((db)=>{
+            db.collection(collection_name).find({
+                "_id" : ObjectId(id)
+            }).toArray((error, dataRes)=>{
+                if(dataRes.length != 0){
+                    resolve({
+                        status_code : 200,
+                        data : dataRes,
+                        message : "data found!"
+                    })
+                }
+                else{
+                    reject({
+                        status_code : 404,
+                        message : "Data not found!"
+                    })
+                }
+            })
+        })
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const mongo = require("mongodb");
+// const url = "mongodb://127.0.0.1:27017";
+// const ObjectId = require("mongodb").ObjectId;
+// const config = ()=>{
+//     return new Promise((resolve, reject)=>{
+//         mongo.MongoClient.connect(url, (error, conn)=>{
+//             const db = conn.db("nodewap");
+//             resolve(db);
+//         })
+
+//     })
+// }
+
+
+// // fetch and find the data
+
+// exports.find = (query, collection_name)=>{
+//     return new Promise((resolve, reject)=>{
+//         config().then((db)=>{
+//             db.collection(collection_name).find(query).toArray((error, dataResponse)=>{
+//                 if(dataResponse.length != 0){
+//                     resolve({
+//                         statusCode : 200,
+//                         data : dataResponse,
+//                         message : "Match found !"
+//                     });
+//                 }
+//                 else{
+//                     reject({
+//                         statusCode : 404,
+//                         message : "Data not found !"
+//                     })
+//                 }
+//             })
+//         })
+//     })
+// }
+
+
+
+
+
+// // isnertone function defination
+
+// exports.insertOne = (userInfo, collection_name)=>{
+
+//     return new Promise((resolve, reject)=>{
+
+//         config().then((db)=>{
+//             db.collection(collection_name).insertOne(userInfo,(error, dataResponse)=>{
+//                 if(error){
+//                     reject({
+//                     statusCode : 500,
+//                         message : "internal server error"
+//                     })
+//                 }
+//                 else{
+//                     resolve({
+//                         statusCode : 200,
+//                         data : dataResponse,
+//                         message : "Data inserted !"
+//                     })
+//                 }
+//             })
+//         });
+//     });
+// }
+
+
+
+// exports.updateById = (id, formdata, collection_name)=>{
+//     return new Promise((resolve, reject)=>{
+//         config().then((db)=>{
+//             db.collection(collection_name).updateOne({"_id" : ObjectId(id)},formdata, (error, dataRes)=>{
+//                 if(error){
+//                     reject({
+//                         statusCode : 500,
+//                         message : "Internal server error"
+//                     })
+//                 }
+//                 else{
+//                     resolve({
+//                         statusCode : 201, //update success status code
+//                         data : dataRes,
+//                         message : "Data updated!"
+//                     })
+//                 }
+//             })
+//         })
+//     })
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // const mongo = require("mongodb");
+// // const url = "mongodb://127.0.0.1:27017";
+
+// // const config = ()=>{
+// //     return new Promise((resolve, reject)=>{
+// //         mongo.MongoClient.connect(url,(error, conn)=>{
+// //             const db = conn.db("users");
+// //             const collection = db.collection("users");
+// //             resolve(collection);
+// //         })
+// //     });
+
+
+
+// // }
+
+// // exports.find = (query)=>{
+
+// //     return new Promise((resolve, reject)=>{
+
+// //         config().then((collection)=>{
+// //             collection.find(query).toArray((error, dataResponse)=>{
+// //                 console.log(dataResponse);
+// //                 if(dataResponse.length != 0){
+// //                     resolve({
+// //                         statusCode : 200,
+// //                         data : dataResponse,
+// //                         message : "Match found!"
+// //                     })
+// //                 }
+// //                 else{
+// //                     reject({
+// //                         statusCode : 404,
+// //                         message : 'Data not found!'
+// //                     })
+// //                 }
+// //             })
+// //         });
+// //     })
+
+
+// // }
+
+
+
+
+
+// // exports.insertOne = (formData)=>{
+// //     return new Promise((resolve, reject)=>{
+// //         config().then((collection)=>{
+// //             collection.insertOne(formData, (error, dataResponse)=>{
+// //                 if(error){
+// //                     reject({
+// //                         statusCode : 500,
+// //                         message : "Internal server error"
+// //                     });
+// //                 }
+// //                 else{
+// //                     resolve({
+// //                         statusCode : 200,
+// //                         data : dataResponse,
+// //                         message : "Data inserted!"
+// //                     });
+// //                 }
+// //             });
+// //         });
+// //     });
+// // }
+
+
+
+
+// // exports.insertOne = (formData, response)=>{
+// //     mongo.MongoClient.connect(url, (error,conn)=>{
+
+// //         const data = JSON.parse(formData);
+// //         const db = conn.db("users");
+// //         db.collection("users").insertOne(data, (error, dataResponse)=>{
+// //             if(error){
+// //                 sendResponse(response, 500, 'internal sever error !');
+// //             }
+// //             else{
+// //                 sendResponse(response, 200,dataResponse );
+
+// //             }
+// //         })
+// //     });
+// // };
+
+
+// // const sendResponse = (response, statusCode, responseMessage)=>{
+// //     response.writeHead(statusCode,{
+// //         'Content-type' : 'application/json'
+// //     });
+
+// //     const message = JSON.stringify({
+// //         message : responseMessage
+// //     })
+
+// //     response.write(message);
+// //     return response.end();
+
+// // }
