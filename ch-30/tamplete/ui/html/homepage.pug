@@ -1,0 +1,13 @@
+doctype html 
+html 
+    head 
+        title=title 
+    body 
+        - let classname = "para"
+        - let idName = "para"
+        - let para = "this para used for variable";
+        h1(style="color: red").heading.demo-text#demo=heading 
+        p=description
+        p(class=classname id=idName)=para 
+        p.classname#idName
+            
