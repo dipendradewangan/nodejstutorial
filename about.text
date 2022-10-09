@@ -59,3 +59,8 @@ upto ch - 28 completed
     learn about delete = delete data into the databse
     install body-server
     made separate function for all request for the database
+
+upto ch - 29 completed
+    learn about middleware
+    make route using module
+    defined middleware according to url

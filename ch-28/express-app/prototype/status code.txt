@@ -1,0 +1,5 @@
+200 = success , 
+401 = unauthorised , password not match, authentication failed, email not verified
+404 = data not found 
+201 = update success
+500 = internal server error

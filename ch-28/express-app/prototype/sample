@@ -1,0 +1,53 @@
+javascript toast coding
+
+if (data.message.insertedId) {
+    $(".toast").toast('show');
+    $(".toast-body").html("Thank you ! Signup success....");
+    $(".toast").addClass("animate__animated animate__slideInRight");
+    $("#signup-form").trigger("reset");
+} else {
+    $(".toast").toast('show');
+    $(".toast-body").html("Opps ! internal server error....");
+    $(".toast").addClass("animate__animated animate__slideInRight");
+    $("#signup-form").trigger("reset");
+
+}
+
+
+// verify the token
+const teken = jwt.verify(post.token,"1234", (error, success)=>{
+    if(success){
+        console.log(success);
+    }
+    else{
+        const message = JSON.stringify({
+            isVerified : false,
+            message : "Token not verified!",
+        });
+        sendResponse(response, message, 401);
+    }
+});
+
+// send mail details prototype
+const auth = mail.createTransport({
+    host : 'smtp.gmail.com',
+    auth : {
+        user : process.env.ADMIN_EMAIL_USERNAME,
+        pass : process.env.ADMIN_EMAIL_PASSWORD
+    },
+    port : 587,
+    sequre : false
+})
+
+const mailDetails = {
+    form : process.env.ADMIN_EMAIL_USERNAME,
+    to : reciept.email,
+    subject : "Verification link",
+    html : fs.readFileSync("html/email-template.html")
+}
+
+auth.sendMail(mailDetails, (error, successRes)=>{
+    if(error)
+        throw error;
+    console.log(successRes);
+});
