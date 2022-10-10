@@ -68,3 +68,10 @@ upto ch - 29 completed
 upto ch - 30 completed
     learn about pug tamplate engine
     set pug templete
+
+upto ch - 31 completed
+    using pug 
+    set static path ui
+    make rout for all pug file 
+    make saperate file for header and its css 
+    include header in all pug file

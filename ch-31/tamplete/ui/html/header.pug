@@ -1,0 +1,8 @@
+- const menus = [{label:"Homepage", link : "/"},{label:"Career", link : "/career"},{label:"Download", link : "/download"},{label:"About us", link : "/about-us"},{label:"Contect us", link : "/contect-us"}]
+        nav.w-100.d-flex.justify-content-between.px-4.py-3.shadow-lg.navbar.navbar-expand-sm 
+            ul.navbar-nav 
+                each menu in menus 
+                    i.nav-item
+                        a(href=menu.link).nav-link=menu.label  
+           
+            button#auth-btn.btn.btn-primary login    
