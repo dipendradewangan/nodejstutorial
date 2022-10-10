@@ -1,0 +1,7 @@
+create server using express
+make schema module for user schema using mongoose
+crate and connect database using mongoose
+make function storedata, fetchdata, fetchdatabyid, updatedatabyid, deletedatabyid 
+these all function export as module
+all module imported in index.js file 
+all function call one by one and send argument request, response
