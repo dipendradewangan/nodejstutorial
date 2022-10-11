@@ -1,0 +1,9 @@
+learn about mvc architecture
+make saperate index.html file
+in index.html ajax request to index js file
+learn about multer 
+lean about
+    view = frontent files
+    routing = routing files
+    controller = contoller files
+    
