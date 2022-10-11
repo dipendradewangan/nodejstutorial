@@ -1,0 +1,13 @@
+explain these funtions 
+    storeData 
+    fetchData
+    fetchDataById
+    updateDataById
+    deleteDataById
+    findByIdAndDelete
+    findByIdAndUpdate
+    findOne
+    findByQuery
+    
+explain schema validation according to multiple mobile number
+details of address with detail input

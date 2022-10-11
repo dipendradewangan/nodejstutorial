@@ -85,3 +85,18 @@ upto ch - 32 completed
     these all function export as module
     all module imported in index.js file 
     all function call one by one and send argument request, response
+
+upto ch - 33 completed
+    explain these funtions 
+        storeData 
+        fetchData
+        fetchDataById
+        updateDataById
+        deleteDataById
+        findByIdAndDelete
+        findByIdAndUpdate
+        findOne
+        findByQuery
+        
+    explain schema validation according to multiple mobile number
+    details of address with detail input
