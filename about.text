@@ -100,3 +100,14 @@ upto ch - 33 completed
         
     explain schema validation according to multiple mobile number
     details of address with detail input
+
+upto ch -34 completed
+    learn about mvc architecture
+    make saperate index.html file
+    in index.html ajax request to index js file
+    learn about multer 
+    lean about
+        view = frontent files
+        routing = routing files
+        controller = contoller files
+        
