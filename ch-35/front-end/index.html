@@ -17,6 +17,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .set-error{
+            border: 1px solid red;
+        }
+
+        .remove-error{
+            border: inherit;
+        }
+    </style>
 </head>
 
 <body>
@@ -64,13 +73,15 @@
                 <h3>Post a blog</h3>
                 <form class="w-75">
                     <div class="mb-4">
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" class="form-control title">
+                        <p class="title-error text-danger"></p>
                     </div>
                     <div class="mb-4">
                         <input type="file" accept="images/*" name="image" class="form-control">
                     </div>
                     <div class="mb-4">
-                        <textarea name="content" class="form-control" cols="30" rows="10"></textarea>
+                        <p class="content-error text-danger"></p>
+                        <textarea name="content" class="form-control content" cols="30" rows="10"></textarea>
                     </div>
                     <div class="mb-4">
                         <input class="btn btn-primary rounded-0" type="submit" value="submit">
