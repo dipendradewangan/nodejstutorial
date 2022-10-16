@@ -135,3 +135,8 @@ upto ch - 35 completed
     validated schema for all fields are required and title field is unique
 
     
+upto ch - 36 completed
+    validating frontend using unique,
+    after that validating frontend using required ,
+    retrived all data using get request routing
+    retrived data by category using get request category routing
