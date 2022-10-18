@@ -140,3 +140,16 @@ upto ch - 36 completed
     after that validating frontend using required ,
     retrived all data using get request routing
     retrived data by category using get request category routing
+
+upto ch - 37 completed
+    requested get all for all menus
+    retrived all menus data 
+    seted frontend for all munus
+
+    learn about opps
+        learn about class
+        learn about object
+        learn about constructor
+        learn about class property
+
+    commit - requested api using get according to all menues and seted frontend for according to all menus and leant about class, object, constructor, class property

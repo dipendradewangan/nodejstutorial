@@ -1,0 +1,33 @@
+learn about mvc architecture
+make saperate index.html file
+in index.html ajax request to index js file
+learn about multer 
+lean about
+    view = frontent files
+    routing = routing files
+    controller = contoller files
+......................................................................................................
+
+all middlewares are saperated on middleware files
+make storage/images folder and dynamically insert images on this folder using multer
+make schema using mongoose for blogwap database
+create databse/db.js file write code for createData for insert data on the blogs collection
+validated schema for all fields are required and title field is unique
+ 
+some change in this all section for error response about content and title 
+
+......................................................................................................
+
+validating frontend using unique,
+after that validating frontend using required ,
+retrived all data using get request routing
+retrived data by category using get request category routing
+send rest api if data find or not
+
+......................................................................................................
+
+requested get all for all menus
+retrived all menus data 
+seted frontend for all munus
+
+commit - requested api using get according to all menues and seted frontend for according to all menus

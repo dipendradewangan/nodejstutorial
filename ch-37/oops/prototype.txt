@@ -1,0 +1,6 @@
+learn about class
+learn about object
+learn about constructor
+learn about class property
+
+...........................................................................
