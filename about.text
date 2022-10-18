@@ -151,5 +151,16 @@ upto ch - 37 completed
         learn about object
         learn about constructor
         learn about class property
-
     commit - requested api using get according to all menues and seted frontend for according to all menus and leant about class, object, constructor, class property
+
+upto ch - 38 completed
+    generate express using express generator
+    we got project related all folders and files
+    we got jade tamplate engine 
+    we removed jade tamplate info from packege.json
+    then installed node modules
+    installed pug 
+    removed all routing files for refactor new routing
+    added bootstrap 5(lates) cdn for designing
+    make frontent with some svg pic and logo
+    commit - understood about express generator and create project using express generator

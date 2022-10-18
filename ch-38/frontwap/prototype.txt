@@ -1,0 +1,9 @@
+generate express using express generator
+we got project related all folders and files
+we got jade tamplate engine 
+we removed jade tamplate info from packege.json
+then installed node modules
+installed pug 
+removed all routing files for refactor new routing
+added bootstrap 5(lates) cdn for designing
+make frontent with some svg pic and logo
