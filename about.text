@@ -164,3 +164,7 @@ upto ch - 38 completed
     added bootstrap 5(lates) cdn for designing
     make frontent with some svg pic and logo
     commit - understood about express generator and create project using express generator
+
+upto ch - 38 completed
+    saperate signup in signup.pug as a modal linked by signup button
+    saperate signup in login.pug as a modal linked by login button
