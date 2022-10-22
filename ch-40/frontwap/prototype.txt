@@ -1,0 +1,28 @@
+generate express using express generator
+we got project related all folders and files
+we got jade tamplate engine 
+we removed jade tamplate info from packege.json
+then installed node modules
+installed pug 
+removed all routing files for refactor new routing
+added bootstrap 5(lates) cdn for designing
+make frontent with some svg pic and logo
+
+.......................................................................................................
+
+saperate signup in signup.pug as a modal linked by signup button
+saperate signup in login.pug as a modal linked by login button
+
+.......................................................................................................
+
+created index.js and linked it into index.pug page
+activate signup and login request button one by one into login and signup modals
+modified input filed name attibute value according to company info
+ajax post requested and tested for signup data 
+make route for /api/signup for  signup data
+after all this http post request /api/private/company from sinup.route.js
+if all this successfull - testing successfull
+then retrieve body post data using formdata = request.body
+it encrypted using jsonwebtoken and generate secret key crypto.js and thirdparty website
+secret key defined on .env file
+token will expire on 120 seconds  

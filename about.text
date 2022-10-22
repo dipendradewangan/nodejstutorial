@@ -165,6 +165,19 @@ upto ch - 38 completed
     make frontent with some svg pic and logo
     commit - understood about express generator and create project using express generator
 
-upto ch - 38 completed
+upto ch - 39 completed
     saperate signup in signup.pug as a modal linked by signup button
     saperate signup in login.pug as a modal linked by login button
+
+upto ch - 40 completed
+    created index.js and linked it into index.pug page
+    activate signup and login request button one by one into login and signup modals
+    modified input filed name attibute value according to company info
+    ajax post requested and tested for signup data 
+    make route for /api/signup for  signup data
+    after all this http post request /api/private/company from sinup.route.js
+    if all this successfull - testing successfull
+    then retrieve body post data using formdata = request.body
+    it encrypted using jsonwebtoken and generate secret key crypto.js and thirdparty website
+    secret key defined on .env file
+    token will expire on 120 seconds  
