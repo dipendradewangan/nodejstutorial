@@ -1,0 +1,34 @@
+doctype html 
+html 
+    head 
+        title=title
+        include bootstrap
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    body(style="background-color: #F7FAFF") 
+        nav.navbar.navbar-expand-lg.bg-light.d-flex.justify-content-between(style="box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2")
+            img.mx-4(src="images/logo.svg" alt="logo" style="width: 120px")
+            ul.navbar-nav.p-3.px-5
+                li.nav-item.mr-2(style="margin-right: 20px")
+                    a.nav-link.py-3.px-4.btn(
+                        href="#"
+                        data-bs-target="#login-modal"
+                        data-bs-toggle="modal"
+                        ) Login
+                li.nav-item
+                    a.nav-link.py-3.px-4.btn.ml-3(
+                        href="#" 
+                        style="background-color : #377DFF; color: white"
+                        data-bs-target="#signup-modal"
+                        data-bs-toggle="modal"
+                        ) Signup
+        div.container
+            div.my-5
+                h1.display-1 Leaderships 
+                p AN APP TO HANDLE YOUR TEEMS
+                button.btn.text-light.mt-1(style="background-color : #377DFF") TRY DEMO
+            img(src="images/communicating-men.svg" alt="communicating-men" style="width: 50%; float: right")
+        include signup 
+        include login
+
+        script(src="javascripts/index.js") 
+        
