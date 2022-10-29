@@ -181,3 +181,25 @@ upto ch - 40 completed
     it encrypted using jsonwebtoken and generate secret key crypto.js and thirdparty website
     secret key defined on .env file
     token will expire on 120 seconds  
+
+upto ch - 42 completed
+    install mongodb and mongoose using npm
+    create company.model.js into model folder and make companySchema using schema
+    model exported
+    created database.servises.js into services folder
+    imported companySchema in database.servives.js page
+    created createRocord function and return stored data and exported this function using module
+    imported this function in company.controller.js 
+    using Exception handling in this page 
+    using schema middleware (companySchema.pre('save', function(){})) for unique field validation
+    return to signup.routes.js from from http.service.js postRequest response data 
+    check using companyResponse company created or not if not created response.json(.....)
+    if created - it handle after user routed and schema creation
+    create user.routed.js into routes folder 
+    defind route code for user routes
+    exported as a module
+    is imported into app.js file
+    and used as a middleware (app.use("api/private/user", userRoutes))
+    create userSchema and exported as a module
+
+    commit - made company route and companySchema , stored company data excluded password data and created user routes userschema 
