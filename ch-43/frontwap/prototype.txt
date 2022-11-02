@@ -1,0 +1,80 @@
+generate express using express generator
+we got project related all folders and files
+we got jade tamplate engine 
+we removed jade tamplate info from packege.json
+then installed node modules
+installed pug 
+removed all routing files for refactor new routing
+added bootstrap 5(latest) cdn for designing
+make frontent with some svg pic and logo
+
+.......................................................................................................
+
+saperate signup in signup.pug as a modal linked by signup button
+saperate signup in login.pug as a modal linked by login button
+
+.......................................................................................................
+
+created index.js and linked it into index.pug page
+activate signup and login request button one by one into login and signup modals
+modified input filed name attibute value according to company info
+ajax post requested and tested for signup data 
+make route for /api/signup for  signup data
+after all this http post request /api/private/company from sinup.route.js
+if all this successfull - testing successfull
+then retrieve body post data using formdata = request.body
+it encrypted using jsonwebtoken and generate secret key crypto.js and thirdparty website
+secret key defined on .env file
+token will expire on 120 seconds  
+
+.......................................................................................................
+
+create token.service.js file into services folder 
+i have written all token related code in this file
+first I have created createToken function and defined token  
+token.service.js page required into signup.routes.js  
+created new file http.service.js and required supertest on this page
+ajax post requested on this page and exported as a postRequest function 
+created company.controller.js into contoller folder
+required token.service.js in this page
+
+.......................................................................................................
+
+install mongodb and mongoose using npm
+create company.model.js into model folder and make companySchema using schema
+model exported
+created database.servises.js into services folder
+imported companySchema in database.servives.js page
+created createRocord function and return stored data and exported this function using module
+imported this function in company.controller.js 
+using Exception handling in this page 
+using schema middleware (companySchema.pre('save', function(){})) for unique field validation
+return to signup.routes.js from from http.service.js postRequest response data 
+check using companyResponse company created or not if not created response.json(.....)
+if created - it handle after user routed and schema creation
+create user.routed.js into routes folder 
+defind route code for user routes
+exported as a module
+is imported into app.js file
+and used as a middleware (app.use("api/private/user", userRoutes))
+create userSchema and exported as a module
+
+commit - made company route and companySchema , stored company data excluded password data and created user routes userschema 
+
+.......................................................................................................
+
+to make chang user api to private user api, I change the position of middleware of "api/private/user"
+open signup.routes.js file and check, compnayCreated or not
+if compnayCreated, set new user json data for user token 
+I called the createCustomToken, from token.service.js 
+this function returns token 
+after this, i have done http request with token
+created userController 
+in userController called verify token and check, token verify or not
+if token not verified, set status 401 permission defined
+if token verified called creatUser from database servives
+use Exception handling (try or catch), in try block userResponse from the databse and catch block error from the database
+after all we open singup routes and return response.json from http request
+for password encryption I install bcrypt and created a new file bcrypt.service.js and required bcrypt into this file
+created a function encrypt and exported as a module
+created a middleware into user.model.js and set pre middleware before save data called encrypt function from bcrypt

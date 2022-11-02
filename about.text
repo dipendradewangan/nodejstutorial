@@ -203,3 +203,21 @@ upto ch - 42 completed
     create userSchema and exported as a module
 
     commit - made company route and companySchema , stored company data excluded password data and created user routes userschema 
+
+upto ch - 43 completed
+    to make chang user api to private user api, I change the position of middleware of "api/private/user"
+    open signup.routes.js file and check, compnayCreated or not
+    if compnayCreated, set new user json data for user token 
+    I called the createCustomToken, from token.service.js 
+    this function returns token 
+    after this, i have done http request with token
+    created userController 
+    in userController called verify token and check, token verify or not
+    if token not verified, set status 401 permission defined
+    if token verified called creatUser from database servives
+    use Exception handling (try or catch), in try block userResponse from the databse and catch block error from the database
+    after all we open singup routes and return response.json from http request
+    for password encryption I install bcrypt and created a new file bcrypt.service.js and required bcrypt into this file
+    created a function encrypt and exported as a module
+    created a middleware into user.model.js and set pre middleware before save data called encrypt function from bcrypt
+    commit - "make user api private, created token , verify token and stored userData into database"
